@@ -1,0 +1,112 @@
+/*.container {*/
+  /*margin-top: 10px;*/
+/*}*/
+
+.container{
+  background-color: ghostwhite;
+  margin-top: 70px;
+  border-radius: 15px;
+  width: 950px;
+  height: 950px;
+}
+
+form{
+  padding: 20px;
+}
+
+#header{
+  padding:  20px;
+}
+
+
+
+h3 {
+  color: darkgoldenrod;
+  text-align: center;
+}
+h6{
+  color: dodgerblue;
+  text-align: right;
+
+}
+
+pre{
+  text-align: right;
+}
+
+#pin{
+  color: red;
+}
+.setColor{
+  border: 1px solid red;
+}
+
+.setColor1{
+  border: 1px solid green;
+}
+
+
+
+
+.form-control {
+  width: 245px;
+  height: 38px;
+}
+
+.tari{
+  text-align: center;
+}
+
+.ID{
+  width: 43px;
+  height: 38px;
+  margin-right:10px;
+  text-align: center;
+  display: inline-block;
+  }
+
+.aa{
+  margin-left: 10px;
+}
+.bd{
+  margin-right: 10px;
+}
+#cancel{
+
+}
+
+.footer{
+  text-align: center;
+}
+
+.btn-first{
+  font-size: 18px;
+  border: 2px solid #FF7E00;
+  background-color: #FFC000;
+  font-family: "Arian AMU", "Arial AMU", Sylfaen;
+  color: #FFFFFF;
+  padding: 3px;
+  font-weight: bold;
+  margin-top: 8px;
+  margin-right: 5px;
+  width: 100px;
+
+}
+.row_btn{
+  margin-top:100px;
+  margin-left:200px;
+}
+
+.btn-second{
+  cursor: pointer;
+  font-size: 18px;
+  padding: 3px;
+  border: 2px solid #999999;
+  background-color: #B9B9B9;
+  font-family: "Arian AMU", "Arial AMU", Sylfaen;
+  color: #FFFFFF;
+  font-weight: bold;
+  margin-top: 8px;
+  width: 100px;
+
+}

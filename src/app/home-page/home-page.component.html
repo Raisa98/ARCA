@@ -1,0 +1,173 @@
+<div class="container" *ngIf="p">
+  <div class="row" id="header">
+    <div class="col-3">
+      <img src="../assets/image/arca_logo.gif" alt="">
+    </div>
+    <div class="col-6">
+      <h3>ՎԻՐՏՈՒԱԼ ՔԱՐՏԻ ԳՐԱՆՑՈՒՄ</h3>
+    </div>
+    <div class="col-3">
+      <h6>Change to English</h6>
+      <a href="http://localhost:4200/"><h6>Ստեղծել նոր վիրտուալ քարտ</h6></a>
+    </div>
+  </div>
+
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+
+ <!--   Qarti Hamar@   -->
+
+<div class="form-group">
+   <div class="row">
+    <div class="col-6">
+         <pre><b>Քարտի համարը.</b>
+             (առանց բացատների)</pre>
+    </div>
+    <div class="col-6">
+      <input type="text" class="form-control" minlength="16" maxlength="16" [ngClass]="{ 'setColor': getBoolCard(), 'setColor1': getBoolCard1() }" formControlName="card_number">
+
+    </div>
+  </div>
+</div>
+<!--   Anun Azg.  -->
+
+  <div class="form-group">
+  <div class="row">
+    <div class="col-6">
+      <pre><b>Ձեր անունը եւ ազգանունը.</b>
+           Մեծատառ, քարտին դաջված հերթականությամբ,
+           ներառյալ MR, MS և այլն (առկայության դեպքում)</pre>
+    </div>
+   <div class="col-6">
+     <input type="text" class="form-control" [ngClass]="{ 'setColor': getBoolName(), 'setColor1': getBoolName1() }" formControlName="cardName">
+
+   </div>
+  </div>
+  </div>
+
+<!--   Vaver. Jamket   -->
+
+
+<div class="form-group">
+  <div class="row">
+    <div class="col-6">
+      <pre><b>Վավերականության ժամկետը:</b>
+           (վավեր է մինչև)</pre>
+    </div>
+    <div class="col-6" >
+      <input type="text" autocomplete="off" maxlength="2" class="ID"  [ngClass]="{ 'setColor': getBoolVaver(), 'setColor1': getBoolVaver1() }" formControlName="cardVaver">
+
+      <span> / </span>
+      <input type="text" autocomplete="off" maxlength="2" class="ID"  [ngClass]="{ 'setColor': getBoolVaver2(), 'setColor1': getBoolVaver3() }" formControlName="cardVaver2">
+
+      <span class="aa">(աա/տտ)</span>
+    </div>
+  </div>
+</div>
+
+  <hr>
+
+<!--   Cnndyan amsativ  -->
+
+<div class="form-group">
+  <div class="row">
+    <div class="col-6">
+      <pre><b>Ծննդյան ամսաթիվը.</b></pre>
+    </div>
+    <div class="col-6">
+            <select class="bd" formControlName="birthDay">
+              <option *ngFor="let day of months[form.get('birthMonth').value].day; let j=index" value={{j}}>{{day}}</option>
+            </select>
+
+            <select class="bd" formControlName="birthMonth">
+              <option *ngFor="let month of months; let i=index" value={{i}}>{{month.amis}}</option>
+            </select>
+
+            <input type="text" class="tari" size="4" minlength="4" maxlength="4" [ngClass]="{ 'setColor': getBoolTaretiv(), 'setColor1': getBoolTaretiv1()}" formControlName="cardTaretiv">
+
+      </div>
+    </div>
+</div>
+
+
+<!--    Bankayin Gaxtnabar    -->
+
+<div class="form-group">
+  <div class="row">
+    <div class="col-6">
+      <pre><b>Ձեր բանկային գաղտնաբառը.</b><p id="pin">(սա Ձեր PIN ծածկագիրը չէ)</p></pre>
+    </div>
+    <div class="col-6">
+      <input type="password" class="form-control" [ngClass]="{ 'setColor': getBoolPass(), 'setColor1': getBoolPass1() }" formControlName="cardPass">
+
+    </div>
+    </div>
+  </div>
+  <hr>
+
+
+
+
+
+<!--    Qarti Vaver. Jamket     -->
+
+
+  <div class="row">
+    <div class="col-6">
+      <pre><b>Վիրտուալ քարտի վավերականության ժամկետը.</b></pre>
+    </div>
+    <div class="col-6">
+
+      <select class="bd" formControlName="vaverDay">
+        <option *ngFor="let day of months[form.get('birthMonth').value].day; let j=index" value={{j}}>{{day}}</option>
+      </select>
+      <select class="bd" formControlName="vaverMonth">
+        <option *ngFor="let month of months; let i=index" value={{i}}>{{month.amis}}</option>
+      </select>
+      <input type="text" class="tari" size="4" minlength="4" maxlength="4" [ngClass]="{ 'setColor': getBoolVirtualTaretiv(), 'setColor1': getBoolVirtualTaretiv1()}" formControlName="cardVirtualTaretiv">
+    </div>
+  </div>
+
+
+<!--   Virtual Qarti gaxtnabar   -->
+
+
+  <div class="row">
+    <div class="col-6">
+      <pre><b>Վիրտուալ քարտի գաղտնաբառը.
+          </b>(8-16 նիշ)</pre>
+    </div>
+    <div class="col-6">
+      <input type="password" class="form-control"  minlength="8" maxlength="16" [ngClass]="{ 'setColor': getBoolVirtualPass(), 'setColor1': getBoolVirtualPass1() }" formControlName="pass">
+
+    </div>
+  </div>
+
+
+<!--   Virtual Qarti Gaxtnabari krknutyun   -->
+
+
+  <div class="row">
+    <div class="col-6">
+      <pre><b>Կրկնեք գաղտնաբառը.</b></pre>
+    </div>
+    <div class="col-6">
+      <input type="password" class="form-control" minlength="8" maxlength="16" [ngClass]="{ 'setColor': getBoolPassConfirm(), 'setColor1': getBoolPassConfirm1() }" formControlName="passConfirm">
+    </div>
+  </div>
+
+    <div class="row_btn">
+      <div class="col-6 offset-3">
+        <button type="submit" class="btn-first aligen-center" [disabled]="form.invalid"> OK </button>
+        <button class="btn-second text-center" (click)="click()"> Cancel
+        </button>
+      </div>
+    </div>
+
+
+  </form>
+</div>
+
+
+
